@@ -3,11 +3,11 @@ spring:
     name: recon
   datasource:
     url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/recon}
-    username: postgres
-    password: root
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:root}
   jpa:
     hibernate:
-      ddl-auto: none   # schema is owned entirely by Flyway migrations, not Hibernate
+      ddl-auto: none
     open-in-view: false
   flyway:
     enabled: true
